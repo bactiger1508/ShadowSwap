@@ -40,16 +40,29 @@ git commit -m "Initial commit: ShadowSwap project"
 
 ## Bước 5: Kết nối với Remote Repository
 
-Sau khi tạo repo, GitHub/GitLab sẽ hiển thị URL. Thay `YOUR_USERNAME` bằng username của bạn:
+**LƯU Ý:** Project hiện tại đã có remote origin trỏ đến `https://github.com/kientt15052004/Unity_ShadowSwap.git`
 
-### GitHub:
+Bạn có 2 lựa chọn:
+
+### Lựa chọn A: Thay đổi remote origin (Khuyến nghị)
+
+Sau khi tạo repo ShadowSwap mới, thay đổi URL của origin:
+
 ```bash
-git remote add origin https://github.com/YOUR_USERNAME/ShadowSwap.git
+git remote set-url origin https://github.com/YOUR_USERNAME/ShadowSwap.git
 ```
 
-### GitLab:
+### Lựa chọn B: Thêm remote mới (Giữ repo cũ)
+
+Nếu muốn giữ cả 2 repo, thêm remote mới:
+
 ```bash
-git remote add origin https://gitlab.com/YOUR_USERNAME/ShadowSwap.git
+git remote add shadowswap https://github.com/YOUR_USERNAME/ShadowSwap.git
+```
+
+Sau đó push vào remote mới:
+```bash
+git push -u shadowswap bacdv
 ```
 
 ## Bước 6: Đổi tên branch chính (nếu cần)
@@ -62,11 +75,23 @@ git branch -M main
 
 ## Bước 7: Push code lên Repository
 
+**LƯU Ý:** Branch hiện tại của bạn là `bacdv`
+
+### Nếu chọn Lựa chọn A (thay đổi origin):
 ```bash
+git push -u origin bacdv
+```
+
+Hoặc nếu muốn push lên branch `main`:
+```bash
+git branch -M main
 git push -u origin main
 ```
 
-(Nếu bạn dùng `master` thay vì `main`, thay `main` bằng `master`)
+### Nếu chọn Lựa chọn B (thêm remote mới):
+```bash
+git push -u shadowswap bacdv
+```
 
 ## Hoàn thành!
 
